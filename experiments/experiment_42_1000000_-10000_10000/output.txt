@@ -1,0 +1,6 @@
+SEED: 42 SIZE: 1000000 MIN_VALUE: -10000 MAX_VALUE: 10000
+Initial array is not sorted
+stdQsort worked
+countingSort worked
+insertionSort failed
+mergeSort worked

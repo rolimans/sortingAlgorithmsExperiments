@@ -1,0 +1,38 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+ no time accumulated
+
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+  0.00      0.00     0.00        1     0.00     0.00  countingSort
+  0.00      0.00     0.00        1     0.00     0.00  insertionSort
+  0.00      0.00     0.00        1     0.00     0.00  mergeSort
+  0.00      0.00     0.00        1     0.00     0.00  stdQSort
+
+			Call graph
+
+
+granularity: each sample hit covers 4 byte(s) no time propagated
+
+index % time    self  children    called     name
+                0.00    0.00       1/1           main [16]
+[5]      0.0    0.00    0.00       1         countingSort [5]
+-----------------------------------------------
+                0.00    0.00       1/1           main [16]
+[7]      0.0    0.00    0.00       1         insertionSort [7]
+-----------------------------------------------
+                                 198             mergeSort [8]
+                0.00    0.00       1/1           main [16]
+[8]      0.0    0.00    0.00       1+198     mergeSort [8]
+                                 198             mergeSort [8]
+-----------------------------------------------
+                0.00    0.00       1/1           main [16]
+[9]      0.0    0.00    0.00       1         stdQSort [9]
+-----------------------------------------------
+
+Index by function name
+
+   (3) arraysHaveTheSameElements (6) getRandomArray        (2) isSorted
+   (4) cleanCache              (1) getRandomNumber         [8] mergeSort
+   [5] countingSort            [7] insertionSort           [9] stdQSort

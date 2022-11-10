@@ -1,0 +1,47 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+100.00      0.11     0.11        1   110.00   110.00  insertionSort
+  0.00      0.11     0.00        1     0.00     0.00  countingSort
+  0.00      0.11     0.00        1     0.00     0.00  mergeSort
+  0.00      0.11     0.00        1     0.00     0.00  stdQSort
+
+			Call graph
+
+
+granularity: each sample hit covers 4 byte(s) for 9.09% of 0.11 seconds
+
+index % time    self  children    called     name
+                0.11    0.00       1/1           main [2]
+[1]    100.0    0.11    0.00       1         insertionSort [1]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]    100.0    0.00    0.11                 main [2]
+                0.11    0.00       1/1           insertionSort [1]
+                0.00    0.00       5/5           isSorted (4)
+                0.00    0.00       4/4           cleanCache (6)
+                0.00    0.00       4/4           arraysHaveTheSameElements (5)
+                0.00    0.00       1/1           getRandomArray (8)
+                0.00    0.00       1/1           stdQSort [10]
+                0.00    0.00       1/1           countingSort [7]
+                0.00    0.00       1/1           mergeSort [9]
+-----------------------------------------------
+                0.00    0.00       1/1           main [2]
+[7]      0.0    0.00    0.00       1         countingSort [7]
+-----------------------------------------------
+                               19998             mergeSort [9]
+                0.00    0.00       1/1           main [2]
+[9]      0.0    0.00    0.00       1+19998   mergeSort [9]
+                               19998             mergeSort [9]
+-----------------------------------------------
+                0.00    0.00       1/1           main [2]
+[10]     0.0    0.00    0.00       1         stdQSort [10]
+-----------------------------------------------
+
+Index by function name
+
+   (5) arraysHaveTheSameElements (8) getRandomArray        (4) isSorted
+   (6) cleanCache              (3) getRandomNumber         [9] mergeSort
+   [7] countingSort            [1] insertionSort          [10] stdQSort

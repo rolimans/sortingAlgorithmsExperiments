@@ -1,0 +1,51 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 71.45     16.22    16.22        1    16.22    16.22  mergeSort
+ 21.76     21.16     4.94                             cmpForStdQSort
+  4.19     22.11     0.95        1     0.95     0.95  stdQSort
+  2.33     22.64     0.53        1     0.53     0.53  countingSort
+  0.26     22.70     0.06                             _init
+
+			Call graph
+
+
+granularity: each sample hit covers 4 byte(s) for 0.04% of 22.70 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     78.0    0.00   17.70                 main [1]
+               16.22    0.00       1/1           mergeSort [2]
+                0.95    0.00       1/1           stdQSort [4]
+                0.53    0.00       1/1           countingSort [5]
+                0.00    0.00       5/5           isSorted (8)
+                0.00    0.00       4/4           cleanCache (9)
+                0.00    0.00       3/3           arraysHaveTheSameElements (10)
+                0.00    0.00       1/1           getRandomArray (11)
+-----------------------------------------------
+                             199999998             mergeSort [2]
+               16.22    0.00       1/1           main [1]
+[2]     71.5   16.22    0.00       1+199999998 mergeSort [2]
+                             199999998             mergeSort [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[3]     21.8    4.94    0.00                 cmpForStdQSort [3]
+-----------------------------------------------
+                0.95    0.00       1/1           main [1]
+[4]      4.2    0.95    0.00       1         stdQSort [4]
+-----------------------------------------------
+                0.53    0.00       1/1           main [1]
+[5]      2.3    0.53    0.00       1         countingSort [5]
+-----------------------------------------------
+                                                 <spontaneous>
+[6]      0.3    0.06    0.00                 _init [6]
+-----------------------------------------------
+
+Index by function name
+
+   [6] _init                   [5] countingSort            [2] mergeSort
+  (10) arraysHaveTheSameElements (11) getRandomArray       [4] stdQSort
+   (9) cleanCache              (7) getRandomNumber
+   [3] cmpForStdQSort          (8) isSorted
